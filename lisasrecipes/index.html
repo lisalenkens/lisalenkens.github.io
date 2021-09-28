@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Lisa's Recipes </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial scale=1">
+
+  <!-- Favicons -->
+  <link href="imgs/chef.png" rel="icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+  <link rel="manifest" href="imgs/site.webmanifest">
+  <link rel="mask-icon" href="imgs/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+ 
+
+  <link
+  href="https://fonts.googleapis.com/css?family=Didact+Gothic|Julius+Sans+One|Poiret+One|Questrial|Quicksand&display=swap"
+  rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css?family=Abril+Fatface|Fjalla+One|Josefin+Sans|Josefin+Slab|Manjari|Nanum+Myeongjo|Nunito|Playfair+Display|Poppins|Quicksand|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Source+Serif+Pro|Vollkorn+SC&display=swap"
+  rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/4029df1ee2.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/lisastyles.css" media="screen">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="20"> 
+  <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark" id="main-nav">
+    <a class="navbar-brand" href="index.html"><img src="imgs/thyme.png" class="brandimage"> Lisa's Recipes </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse collapsibleNavbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#Home"> Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#LatestRecipes"> Latest Recipes </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Recipes.html"> All Recipes </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Aboutme"> About me </a>
+        </li>
+      </ul>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search" name="search" class="searchinput">
+        </form>
+      </div>
+        <!-- Modal -->
+      <div class="collapse navbar-collapse justify-content-end collapsibleNavbar">
+        <ul class="nav navbar-nav justify-content-end">
+          <a data-toggle="modal" data-target="#loginModal" id="linkfont" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i><span class="nav-item nav-link navbar-text"> Sign In </span>
+          </a>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Modal -->
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="content">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body signin-form">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <h2 id="centerform">Sign in</h2>
+            <p class="hint-text">Sign in with your social media account to receive our newest recipes!!</p>
+            <div class="social-btn text-center">
+              <a href="#" class="btn btn-primary btn-lg" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="btn btn-info btn-lg" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="btn btn-danger btn-lg" title="Google"><i class="fab fa-google"></i></a>
+            </div>
+            <div class="or-seperator"><b>or</b></div>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" name="username" placeholder="Username"
+                required="required">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" name="password" placeholder="Password"
+                required="required">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-lg btn-block signup-btn" id="special">Sign in</button>
+            </div>
+            <div class="text-center small"><a href="#">Forgot Your password?</a></div>
+          </form>
+          <div class="text-center small">Don't have an account? <a href="#">Sign up</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <section class="herobanner" id="Home">
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1 class="hometitle"> Welcome to Lisa's Recipes</h1>
+        <p class="homestyle subtitle">Simple and delicious vegetarian recipes </p>
+        <a href="#LatestRecipes" class="homestyle startbutton"> Start cooking! </a>
+        <div class="arrow">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section section1 justify-content-center" id="LatestRecipes">
+    <h1 class="titlesection1"> Latest Recipes </h1>
+    <div class="container-fluid full-width">
+
+      <!-- recipe One -->
+      <div class="row recipe-blog p-0 m-0">
+        <div class="col-sm-12 col-md-6 recipe-img">
+          <img class="img-fluid rounded" src="imgs/chili.jpg" alt="Chili sin Carne">
+        </div>
+        <div class="col-sm-12 col-md-6 recipe-text">
+          <h3 class="blog-title">Chili sin Carne </h3>
+          <ul class="recipe-details2">
+            <li class="recipe-details-item time-icon"><i class="far fa-clock cookingdetails"></i><span
+                class="value">50</span><br><span class="detailstitle2">Minutes</span></li>
+            <li class="recipe-details-item servings-icon"><i class="fas fa-user-friends cookingdetails"></i><span
+                class="value">4</span><br><span class="detailstitle2">Serving</span></li>
+          </ul>
+          <p class="blog-text2">No meat in this chili... ! A super delicious chili with sweet potato, onion, kidney
+            beans and corn.
+            Spice level in this recipe is mild. Served with rice and tortilla chips! Yum! </p>
+          <a class="readmore" href="chilisincarne.html">View Recipe </a>
+        </div>
+      </div>
+
+
+      <!-- /.row -->
+
+
+      <!-- recipe Two -->
+      <div class="row recipe-blog p-0 m-0">
+        <div class="col-sm-12 col-md-6 recipe-img">
+
+          <img class="img-fluid rounded" src="imgs/shepherdspie.jpg" alt="">
+
+        </div>
+        <div class="col-sm-12 col-md-6 recipe-text">
+          <h3 class="blog-title">Shepherd's Pie</h3>
+          <ul class="recipe-details2">
+            <li class="recipe-details-item time-icon"><i class="far fa-clock cookingdetails"></i><span
+                class="value">60</span><br><span class="detailstitle2">Minutes</span></li>
+            <li class="recipe-details-item servings-icon"><i class="fas fa-user-friends cookingdetails"></i><span
+                class="value">3-4</span><br><span class="detailstitle2">Serving</span></li>
+          </ul>
+          <p class="blog-text2">A rich vegetarian shepherds pie with vegetables, mash, mustard and a lot of cheese. The
+            classic Brittish cottage pie without the minced beef, but with a lot of taste and cheese!</p>
+          <a class="readmore" href="#">View Recipe </a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- recipe Three -->
+      <div class="row recipe-blog p-0 m-0">
+        <div class="col-sm-12 col-md-6 recipe-img">
+
+          <img class="img-fluid rounded" src="imgs/courgettesoup.png" alt="courgettesoup">
+        </div>
+        <div class="col-sm-12 col-md-6 recipe-text">
+          <h3 class="blog-title">Courgette Soup</h3>
+          <ul class="recipe-details2">
+            <li class="recipe-details-item time-icon"><i class="far fa-clock cookingdetails"></i><span
+                class="value">30</span><br><span class="detailstitle2">Minutes</span></li>
+            <li class="recipe-details-item servings-icon"><i class="fas fa-user-friends cookingdetails"></i><span
+                class="value">2</span><br><span class="detailstitle2">Serving</span></li>
+          </ul>
+          <p class="blog-text2">A very healthy but creamy courgette soup with only 4 ingredients! It's one of my
+            favourites to cook and to eat, beacuse it's super easy to make but it's so tasty! I probably make this soup
+            thrice a month!</p>
+          <a class="readmore" href="#">View Recipe </a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- recipe Four -->
+      <div class="row recipe-blog p-0 m-0">
+        <div class=" col-sm-12 col-md-6 recipe-img">
+          <img class="img-fluid mx-auto rounded" src="imgs/temph.jpg" alt="sticky Tempeh">
+        </div>
+        <div class="col-sm-12 col-md-6 recipe-text">
+          <h3 class="blog-title">Sticky Tempeh</h3>
+          <ul class="recipe-details2">
+            <li class="recipe-details-item time-icon"><i class="far fa-clock cookingdetails"></i><span
+                class="value">30</span><br><span class="detailstitle2">Minutes</span></li>
+            <li class="recipe-details-item servings-icon"><i class="fas fa-user-friends cookingdetails"></i><span
+                class="value">2-3</span><br><span class="detailstitle2">Serving</span></li>
+          </ul>
+          <p class="blog-text2">Sugar coated Tempeh with peanuts, tauge, bellpepper and rice. Tempeh is a traditional
+            soy product, that is made from fermented soybeans.
+            Try the Indonesian cuisine! </p>
+          <a class="readmore" href="#">View Recipe </a>
+        </div>
+      </div>
+
+
+      <div class="allrecipesbutton">
+        <a href="Recipes.html" class="allrecipes btn btn-secondary"> Check out all recipes<i
+            class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i><i
+            class="fas fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section section2">
+    <hr />
+    <div>
+      <i class="far fa-heart fa-2x"></i>
+      <h1 class="quote"> "No one is born a great cook, <br>one learns by doing..."</h1>
+      <h5 class="quotename"> - Julia Child</h5>
+    </div>
+    <hr />
+  </div>
+
+  <div class="newsletter section section 3" id="Aboutme">
+    <div class="container">
+      <h1 class="titlesection3"> About Me </h1>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="media-object">
+            <div class="container mt-3">
+              <div class="media p-3 col-xs-12 col-sm-6 col-md-4">
+                <img src="imgs/lisa.jpg" alt="Lisa Lenkens" class="align-self-center mr-3 avatar">
+              </div>
+              <div class="media-body col-xs-12 col-sm-6 col-md-8">
+                <h4 class="name">Lisa Lenkens <small><i>Posted on September 30, 2019</i></small></h4>
+                <p class="about">Welcome to Lisa's Recipes! <br>
+                   I am passionate about cooking and trying out new recipes.
+                  <br> Most of the time I don't use recipes because I prefer to cook with my intuition. <br>
+                  Sometimes this works out... and the other times I fall back on these recipes! <br>
+                  I hope you'll find some new or interesting recipes that you would like to try. <br>
+                  By cooking and eating more vegetarian meals, we can reduce our carbon footprint and help save the
+                  world step by step. </p>
+                  <img src="imgs/signature.png" alt="Love, Lisa" class="signature"></img>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="content">
+        <h2 class="subscribetitle">SUBSCRIBE TO OUR NEWSLETTER</h2>
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="email address">
+          <span class="input-group-btn">
+            <button class="homestyle subscribe" type="submit">Subscribe Now</button>
+          </span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+  <div class="footer">
+    <footer>Thanks for visiting my recipe site!
+    </footer>
+    <button class="btn btn-social"><a href="https://www.facebook.com/lisa.lenkens" target="_blank"><i
+          class="fab fa-facebook fa-2x"></i></a></button>
+    <button class="btn btn-social"><a href="https://www.instagram.com/palmtree_designs/?hl=nl" target="_blank"><i
+          class="fab fa-instagram fa-2x"></i></a></button>
+    <button class="btn btn-social"><a href="https://www.linkedin.com/in/lenkenslisa/" target="_blank"><i
+          class="fab fa-linkedin fa-2x"></i></a></button>
+    <button class="btn btn-social"><a href="https://github.com/lisalenkens" target="_blank"><i
+          class="fab fa-github fa-2x"></i></a></button>
+    <p class="copyright"> &copy; 2019. Lisa's Recipes </p>
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {         
+  var current_page = document.location.href;
+
+  $('ul#main-nav li a').removeClass('active');
+  $('ul#main-nav li a[href*="'+current_page+'"]').addClass('active');
+
+});
+
+    </script>
+
+
+  <script>
+    $(".nav .nav-link").on("click", function () {
+      $(".nav").find(".active").removeClass("active");
+      $(this).addClass("active");
+    });
+  </script>
+
+
+  <script>
+    $('.nav-link').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Lisa's Recipes </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/lisastyles.css" media="screen">
+  <link
+    href="https://fonts.googleapis.com/css?family=Didact+Gothic|Julius+Sans+One|Poiret+One|Questrial|Quicksand&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface|Fjalla+One|Josefin+Sans|Josefin+Slab|Manjari|Nanum+Myeongjo|Nunito|Playfair+Display|Poppins|Quicksand|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Source+Serif+Pro|Vollkorn+SC&display=swap"
+    rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4029df1ee2.js"></script>
+
+
+  <!--  Script tag for go back -->
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</head>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="20"> 
+  <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark" id="main-nav">
+    <a class="navbar-brand" href="index.html"><img src="imgs/thyme.png" class="brandimage"> Lisa's Recipes </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse collapsibleNavbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#Home"> Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#LatestRecipes"> Latest Recipes </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="Recipes.html"> All Recipes </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#Aboutme"> About </a>
+        </li>
+      </ul>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search" name="search" class="searchinput">
+        </form>
+      </div>
+        <!-- Modal -->
+      <div class="collapse navbar-collapse justify-content-end collapsibleNavbar">
+        <ul class="nav navbar-nav justify-content-end">
+          <a data-toggle="modal" data-target="#loginModal" id="linkfont" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i><span class="nav-item nav-link navbar-text"> Sign In </span>
+          </a>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="content">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body signin-form">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <h2 id="centerform">Sign in</h2>
+            <p class="hint-text">Sign in with your social media account to receive our newest recipes!!</p>
+            <div class="social-btn text-center">
+              <a href="#" class="btn btn-primary btn-lg" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="btn btn-info btn-lg" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="btn btn-danger btn-lg" title="Google"><i class="fab fa-google"></i></a>
+            </div>
+            <div class="or-seperator"><b>or</b></div>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" name="username" placeholder="Username"
+                required="required">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" name="password" placeholder="Password"
+                required="required">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-lg btn-block signup-btn" id="special">Sign in</button>
+            </div>
+            <div class="text-center small"><a href="#">Forgot Your password?</a></div>
+          </form>
+          <div class="text-center small">Don't have an account? <a href="#">Sign up</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main>
+    <div class="gobackbutton">
+      <a onclick="goBack()" class="goback"><i class="fas fa-chevron-left"></i> Go back </a>
+    </div>
+
+    <h1 class="lower"> All Recipes </h1>
+    <h6> ...all vegetarian...<h6>
+
+        <!-- Recipes grid -->
+
+        <div class="container" id="container1">
+          <div class="row mt-3">
+
+            <div class="recipe-block col-lg-4" id="chili"><a class="recipe-link" href="chilisincarne.html">
+                <img class="img-thumbnail chili" width="300" src="imgs/chili.jpg" alt="Chili sin carne" width="200px"
+                  height="200px">
+                <h2>Chili Sin Carne</h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">50</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">4</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext">No meat in this chili... With sweet potato, onion, kidney beans and corn....</p>
+              </a>
+            </div>
+
+            <div class="recipe-block col-lg-4" id="risotto"><a class="recipe-link" href="#">
+                <img class="img-thumbnail" width="300" src="imgs/risotto.jpg" alt="Risotto" width="200px"
+                  height="200px">
+                <h2>Risotto</h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">40</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">4</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext">A creamy risotto with tomato, bell pepper, onion and mushrooms...</p>
+              </a>
+            </div>
+
+            <div class="recipe-block col-lg-4" id="pastapesto"><a class="recipe-link" href="#">
+                <img class="img-thumbnail" width="300" src="imgs/pastapesto.jpg" alt="Pasta Pesto" width="200px"
+                  height="200px">
+                <h2>Pasta Pesto</h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">20</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">4</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext">A classic dish. Pasta with mushrooms, courgette leek with a pesto-cremefraiche
+                  based sauce....</p>
+              </a>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+        <div class="container" id="container2">
+          <div class="row mt-3">
+            <div class="recipe-block col-lg-4" id="curry"><a class="recipe-link" href="#">
+                <img class="img-thumbnail curry" width="300" src="imgs/yellowcurry.jpg" alt="Yellow Curry" width="200px"
+                  height="200px">
+                <h2>Yellow Curry</h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">60</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">4</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext">A creamy yellow curry tomato, carrot, potato, beans, onion and cauliflower...</p>
+              </a>
+            </div>
+
+
+            <div class="recipe-block col-lg-4" id="pizza"><a class="recipe-link" href="#">
+                <img class="img-thumbnail" width="300" src="imgs/pizza.jpg" alt="Plaat Pizza" width="200px"
+                  height="200px">
+                <h2>Home made Pizza</h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">30</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">2-3</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext"> Super easy and fast recipe, this homemade pizza with tomato, onion, bellpepper,
+                  mozarella and ... </p>
+              </a>
+            </div>
+
+            <div class="recipe-block col-lg-4" id="quornteriyaki"><a class="recipe-link" href="#">
+                <img class="img-thumbnail quorn" width="300" src="imgs/quornteriyaki.jpg" alt="Quorn Teriyaki"
+                  width="200px" height="200px">
+                <h2>Quorn Teriyaki </h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">30</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">2-3</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext"> Pieces of Quorn in a teriyaki sauce with vegetables and rice... </p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container" id="container3">
+          <div class="row mt-3">
+            <div class="recipe-block col-lg-4" id="shepherds"><a class="recipe-link" href="#">
+                <img class="img-thumbnail curry" width="300" src="imgs/shepherdspie.jpg" alt="Shepherds Pie"
+                  width="200px" height="200px">
+                <h2>Shepherds Pie </h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">60</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">3-4</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext">A rich shepherds pie with vegetables, mash and cheese...</p>
+              </a>
+            </div>
+
+            <div class="recipe-block col-lg-4" id="tempeh"><a class="recipe-link" href="#">
+                <img class="img-thumbnail tempeh" src="imgs/temph.jpg" alt="Sticky Tempeh" width="200px" height="200px">
+                <h2>Sticky Tempeh</h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">30</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">2-3</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext">Sugar coated Tempeh with peanuts, tauge, bellpepper and rice....</p>
+              </a>
+            </div>
+
+            <div class="recipe-block col-lg-4" id="courgettesoup"><a class="recipe-link" href="#">
+                <img class="img-thumbnail quorn" width="300" src="imgs/courgettesoup.png" alt="Courgette Soup"
+                  width="200px" height="200px">
+                <h2>Courgette soup </h2>
+                <ul class="recipe-details">
+                  <li class="recipe-details-item time"><i class="far fa-clock cookingdetails"></i><span
+                      class="value">30</span><span class="detailstitle">Minutes</span></li>
+                  <li class="recipe-details-item servings"><i class="fas fa-user-friends cookingdetails"></i><span
+                      class="value">2</span><span class="detailstitle">Serving</span></li>
+                </ul>
+                <p class="recipetext"> A very healthy but creamy courgette soup... </p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                    aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+
+  </main>
+
+  <div class="footer">
+    <footer>Thanks for visiting my recipe site!
+    </footer>
+    <button class="btn btn-social"><a href="https://www.facebook.com/lisa.lenkens" target="_blank"><i
+          class="fab fa-facebook fa-2x"></i></a></button>
+    <button class="btn btn-social"><a href="https://www.instagram.com/palmtree_designs/?hl=nl" target="_blank"><i
+          class="fab fa-instagram fa-2x"></i></a></button>
+    <button class="btn btn-social"><a href="https://www.linkedin.com/in/lenkenslisa/" target="_blank"><i
+          class="fab fa-linkedin fa-2x"></i></a></button>
+    <button class="btn btn-social"><a href="https://github.com/lisalenkens" target="_blank"><i
+          class="fab fa-github fa-2x"></i></a></button>
+    <p class="copyright"> &copy; 2019. Lisa's Recipes </p>
+  </div>
+
+
+</body>
+
+</html>
